@@ -1,0 +1,52 @@
+<?php
+class MwList {
+	
+	private static $instance = null;
+	private static $conf = "";
+	
+	
+	private function __construct(){
+		if(isset($_SESSION['lang'])){
+			$lang = $_SESSION['lang'];
+		}
+		else {
+			$lang = MwPrefs::getInstance()->getDefaultLang();
+		}
+		
+		switch ($lang){
+			case 'en':
+				$ini_array = parse_ini_file("mwLang/en.list", true);
+				break;
+			case 'dt':
+				$ini_array = parse_ini_file("mwLang/dt.list", true);
+				break;
+			case 'fr':
+				$ini_array = parse_ini_file("mwLang/fr.list", true);
+				break;
+			default:
+				$ini_array = parse_ini_file("mwLang/en.list", true);
+				break;
+		}
+		self::$conf=$ini_array;
+	}
+	
+	
+	
+	public static function getInstance() {
+		if(is_null(self::$instance)) {
+			self::$instance = new MwList();			
+			return self::$instance;			
+		}
+		return self::$instance;
+	}
+	
+	
+	public function getList($section){
+		if(!isset(self::$conf[$section])){
+			return array();
+		}
+		return self::$conf[$section];
+	}
+	
+	
+}

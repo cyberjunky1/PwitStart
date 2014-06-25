@@ -1,0 +1,30 @@
+<?php
+
+class loginController extends MwController {
+
+	protected $checkConnexion = false;
+
+	public function actionAuthentification(){
+		$login = "";
+		$pass  = "";
+		$lang  = "";
+		extract($_POST,EXTR_OVERWRITE);
+		$pass = md5($pass);
+		if(MwConnexion::logIn($login,$pass)){
+			$user = new MwUser(MwConnexion::getInstance()->getUserId());
+			$_SESSION['userLogin'] 	= $user->USR_LOGIN;
+			$_SESSION['userLName'] 	= $user->USR_LNAME;
+			$_SESSION['userFName'] 	= $user->USR_FNAME;
+			$_SESSION['userRights'] = $user->USR_RIGHTS;
+			$_SESSION['userLot'] 	= $user->USR_LOT;
+			$_SESSION['userId'] 	= $user->USR_ID;
+			$_SESSION['lang'] 		= $lang;
+			MwTrace::trace_login();
+
+			echo "1";
+		}
+		else {
+			echo "0";
+		}
+	}
+}

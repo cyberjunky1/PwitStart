@@ -1,0 +1,46 @@
+<?php
+class InfFormationsController extends MwController {
+
+	
+	/**
+	 * actionBeforDisplay
+	 */
+	public function actionBeforDisplay(){
+		$smarty = MwSmarty::getInstance();
+		$form = MwFormations::getFullList();
+		$smarty->assign( 'form',$form );
+		
+		
+		
+	}
+
+
+	public function actionSave(){
+	
+		$mode = $_POST['mode'];
+		$id = $_POST['FRM_ID'];
+		if($mode=='N'){
+			$id = '';
+		}
+	
+	
+		$obj = new MwFormations($id);
+		$obj->FRM_NAME  = $_POST['FRM_NAME'];
+		$obj->FRM_LABEL = $_POST['FRM_LABEL'];
+		$obj->FRM_ANNEE = $_POST['FRM_ANNEE'];
+	
+
+		$obj->FRM_ROW_SATUS = 0;
+
+	
+		$obj->save();
+	}
+	
+	public function actionDelete(){
+		$id = $_POST['FRM_ID'];
+		$obj = new MwFormations($id);
+		$obj->delete();
+		echo ($id);
+	}
+}
+

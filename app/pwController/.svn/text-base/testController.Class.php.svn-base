@@ -1,0 +1,25 @@
+<?php
+class testController extends MwController {
+
+
+	public function actionBeforDisplay(){
+
+	}
+
+	public function actionTest(){
+		
+		$list = MwMassif::getListMassif('pk','','','300');
+		$text = json_encode($list);
+	
+		$tab = json_decode($text);
+		echo $tab;
+	}
+
+}
+
+
+
+
+
+
+

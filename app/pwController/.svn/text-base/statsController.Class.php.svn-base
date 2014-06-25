@@ -1,0 +1,40 @@
+<?php
+class statsController extends MwController {
+
+	protected $subViews = array('stats1','stats2','stats3','stats4');
+	
+	/**
+	 * actionInit
+	 */
+	public function actionInit(){
+ 		include_once '../app/mwController/stats1Controller.Class.php';
+ 		include_once '../app/mwController/stats2Controller.Class.php';
+ 		include_once '../app/mwController/stats3Controller.Class.php';
+ 		include_once '../app/mwController/stats4Controller.Class.php';
+	}
+	
+	/**
+	 * actionBeforDisplay
+	 */
+	public function actionBeforDisplay(){
+		$tab = $_SESSION['MwGet'];
+		$frame="";
+		$active = 0;
+		if(isset($tab[0])){
+			$frame=$tab[0];
+		}else{
+			$frame="stats1";
+		}
+		
+		$smarty = MwSmarty::getInstance();
+
+		$smarty->assign('frame',$frame);
+		$smarty->assign('frametpl',$frame.".tpl");
+		$smarty->assign('filejs',$frame.".js");
+		
+		
+		
+	}
+	
+}
+

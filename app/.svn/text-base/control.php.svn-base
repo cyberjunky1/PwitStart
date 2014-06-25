@@ -1,0 +1,48 @@
+<?php
+require_once '../mwClass/MwInit.php';
+
+MwPrefs::getInstance()->setAppPath("app");	//	TODO
+
+$param = explode('>', $_GET['p']);
+if(count($param)<2){
+	MwDebug::debug("Paramétres insufisant ",$_GET['p']);
+	MwDebug::debugInLogFile("Error Appel Controller : ". implode(",", $param));
+	var_dump($param);
+	exit;
+}
+if(count($param)==1){
+	$param[1]="Index";
+}
+
+if($param[0]==""){
+	array_splice($param,0,1);
+}
+if(strlen($param[1])==0){
+	$param[1]="Index";
+}
+
+$ctrlName = $param[0]."Controller";
+
+$includ = "mwController/".$ctrlName.".Class.php";
+include_once ($includ);
+
+$ctrl = new $ctrlName();
+$actionName = "action". $param[1];
+
+if (is_callable(array($ctrl,$actionName))) {
+	if(count($param)>0){
+		$ctrl->{$actionName}($param);
+	}
+	else{
+		$ctrl->{$actionName}();
+	}
+}
+else{
+	MwDebug::debug("Error Unexisted Controller ","Méthode: ".$actionName );
+	MwDebug::debugInLogFile("Error Unexisted Controller  Méthode: ".$actionName);
+}
+
+
+
+
+

@@ -1,0 +1,12 @@
+<?php
+
+class logOutController extends MwController {
+
+	public function actionIndex(){
+		$user = new MwUser($_SESSION['userId']);
+		MwTrace::trace_logout();
+		MwConnexion::getInstance()->logOut();
+		MwConnexion::checkConnexion();
+	}
+
+}

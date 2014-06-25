@@ -1,0 +1,70 @@
+<h1>Formations</h1>
+
+<div class="btn-toolbar" style="width: 90%" align="center">
+	<div class="btn-group pull-left" id="">
+		<a class="btn btn-mini" onclick="edit('N');"><i class="icon-plus"></i></a>
+	</div>
+</div>
+
+
+<div  align="center" class='scrolPage'>
+<table  class="table table-hover table-bordered table-condensed">
+<tr>
+<th>Num</th>
+<th>Nom Fromation</th>
+<th>Label</th>
+<th>Année</th>
+
+</tr>
+ {assign var='nbr' value='0'}
+ {foreach from=$form item=row}
+ {$nbr=$nbr+1}
+ 	<tr>
+ 		<td>{$nbr}</td>
+ 		<td>{$row.FRM_NAME}</td>
+ 		<td>{$row.FRM_LABEL}</td>
+ 		<td>{$row.FRM_ANNEE}</td>
+
+ 		<td style="width: 60px">
+ 		
+ 			<a class="btn btn-mini"onclick="edit('E','{$row.FRM_ID}',
+					'{$row.FRM_NAME|mwAddslashes}','{$row.FRM_LABEL|mwAddslashes}','{$row.FRM_ANNEE}'
+				)"><i class="icon-edit"></i></a> 
+ 		
+ 			<a class="btn btn-mini" onclick="del('{$row.FRM_ID}');">
+	 			<i class="icon-trash"></i>
+	 		</a>
+ 		</td>
+ 	</tr>
+ {/foreach}
+ 
+</table>
+</div>
+
+
+
+<div title="Formation" id="formDialog" style="display:none; background-color:#f7f7f9">
+<h4>Ajouter / Editer</h4>
+<form action="POST" action="#" id="formDialog" name="formDialog">
+<input type="hidden" id="FRM_ID" name="FRM_ID">
+<table style="width: 95%">
+
+	<tr>
+		<td align="right" style="width: 40%">Nom<td>
+		<td><input type="text" id="FRM_NAME" name="FRM_NAME"><td>
+	</tr>
+	<tr>
+		<td align="right" style="width: 40%">Label<td>
+		<td><input type="text" id="FRM_LABEL" name="FRM_LABEL"><td>
+	</tr>
+	<tr>
+		<td align="right" style="width: 40%">Année<td>
+		<td><input type="text" id="FRM_ANNEE" name="FRM_ANNEE"><td>
+	</tr>
+
+
+
+
+</table>
+</form>
+</div>

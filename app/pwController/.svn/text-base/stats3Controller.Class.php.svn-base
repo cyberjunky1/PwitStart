@@ -1,0 +1,36 @@
+<?php
+class stats3Controller extends MwController {
+
+	/**
+	 * actionBeforDisplay
+	 */
+	public function actionBeforDisplay(){
+		$smarty = MwSmarty::getInstance();
+
+	}
+	
+	public function actionGetStat(){
+		
+		$DATE_BEG = $_POST['DATE_BEG'];
+		$DATE_END = $_POST['DATE_END'];
+		
+		if(strlen($DATE_BEG) != 10){
+			$DATE_BEG = '0000-00-00';
+		}
+		
+		if(strlen($DATE_END) != 10){
+			$DATE_END = '0000-00-00';
+		}
+		
+		$list = MwPaiements::stat3($DATE_BEG, $DATE_END);
+		$text = json_encode($list);
+		$search  = array('\\r', '\\n','null',"'");
+		$replace = array('', "\\\\n", '""',"\\\\'");
+		$text = str_replace($search, $replace, $text);
+		echo $text;
+		
+	}
+
+	
+}
+

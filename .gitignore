@@ -1,0 +1,7 @@
+#ignorer ces fichiers
+.buildpath
+.project
+.directory
+.settings/
+app/_cache/*
+app/_compil/*

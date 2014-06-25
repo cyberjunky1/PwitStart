@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<title>{$title}</title> {literal}
+<meta charset="utf-8">
+<meta name="author" content="Halim DJERROUD">
+<meta name="description" content="odo">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<link type="text/css" rel="stylesheet" href="../libs/bootstrap/css/bootstrap.css">
+<link type="text/css" rel="stylesheet" href="../rsrc/css/MwMainStyle.css">
+<script type="text/javascript" src="../libs/jquery/jquery-1.9.1/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="../libs/bootstrap/js/bootstrap.js"></script>
+
+
+<script type="text/javascript" src="../libs/jquery/jquery-dropdown/jquery.dropdown.js"></script>
+<script type="text/javascript" src="../libs/jquery/jquery-ui-1.10.2/ui/jquery-ui.js"></script>
+<script type="text/javascript" src="../libs/Chart.js-master/Chart.js"></script>
+<link type="text/css" rel="stylesheet" href="../libs/jquery/jquery-ui-1.10.2/themes/base/jquery.ui.all.css">
+<link type="text/css" rel="stylesheet" href="../libs/jquery/jquery-dropdown/jquery.dropdown.css">
+<link type="text/css" rel="stylesheet" href="../libs/jquery/jquery-ui-1.10.3.custom/css/tabs/jquery-ui-1.10.3.custom.css">
+<script type="text/javascript" src="../rsrc/js/MwFunctions.js"></script>
+
+<link type="text/css" rel="stylesheet" href="../libs/fpdf/fpdf.css">
+
+<meta name = "viewport" content = "initial-scale = 1, user-scalable = no">
+
+{/literal}

@@ -1,0 +1,29 @@
+<?php
+
+abstract class MwSuper {
+	
+	/**
+	 * Getter Magic Methode
+	 * @param unknown_type $property
+	 */
+	public function __get($property) {
+		if (property_exists($this, $property)) {
+			return $this->$property;
+		}
+	}
+	
+	/**
+	 * Setter Magic Methode 
+	 * @param unknown_type $property
+	 * @param unknown_type $value
+	 */
+	public function __set($property, $value) {
+		if (property_exists($this, $property)) {
+			$this->$property = $value;
+		}
+		return $this;
+	}
+	
+	
+
+}

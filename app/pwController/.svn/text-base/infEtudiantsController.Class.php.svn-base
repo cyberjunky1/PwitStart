@@ -1,0 +1,46 @@
+<?php
+class InfEtudiantsController extends MwController {
+
+	/**
+	 * actionBeforDisplay
+	 */
+	public function actionBeforDisplay(){
+		$smarty = MwSmarty::getInstance();
+		$etud = MwEtudiants::getFullList();
+		$smarty->assign( 'etud',$etud );
+		
+		$formationList = MwFormations::getSelectFormationList();
+		$smarty->assign( 'formationList',$formationList );
+	}
+	
+
+	public function actionSave(){
+	
+		$mode = $_POST['mode'];
+		$id = $_POST['ETU_ID'];
+		if($mode=='N'){
+			$id = '';
+		}
+	
+	
+		$obj = new MwEtudiants($id);
+		$obj->ETU_NOM  = $_POST['ETU_NOM'];
+		$obj->ETU_PRENOM = $_POST['ETU_PRENOM'];
+		$obj->ETU_FRM_ID = $_POST['ETU_FRM_ID'];
+	
+
+		$obj->ETU_ROW_SATUS = 0;
+
+	
+		$obj->save();
+	}
+	
+	public function actionDelete(){
+		$id = $_POST['ETU_ID'];
+		$obj = new MwEtudiants($id);
+		$obj->delete();
+		echo ($id);
+	}
+	
+}
+

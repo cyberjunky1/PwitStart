@@ -1,0 +1,38 @@
+<?php
+class stats4Controller extends MwController {
+
+	/**
+	 * actionBeforDisplay
+	 */
+	public function actionBeforDisplay(){
+		$smarty = MwSmarty::getInstance();
+		$listFrm = MwFormations::getSelectFormationList();
+		$smarty->assign('listFrm',$listFrm );
+	}
+	
+	public function actionGetStat(){
+	
+		$DATE_BEG = $_POST['DATE_BEG'];
+		$DATE_END = $_POST['DATE_END'];
+	
+		if(strlen($DATE_BEG) != 10){
+			$DATE_BEG = '0000-00-00';
+		}
+	
+		if(strlen($DATE_END) != 10){
+			$DATE_END = '0000-00-00';
+		}
+		
+		$FRM_ID = $_POST['FRM_ID'];
+	
+		$list = MwPaiements::stat4($DATE_BEG, $DATE_END,$FRM_ID);
+		$text = json_encode($list);
+		$search  = array('\\r', '\\n','null',"'");
+		$replace = array('', "\\\\n", '""',"\\\\'");
+		$text = str_replace($search, $replace, $text);
+		echo $text;
+	
+	}
+	
+}
+

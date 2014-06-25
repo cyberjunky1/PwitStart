@@ -1,0 +1,66 @@
+<?php
+
+abstract class MwMisc {
+
+	/**
+	 * Concatenation directory
+	 * @param String $dir1
+	 * @param String $dir2
+	 */
+	public static function concat_dirs( $dir1,$dir2)
+	{
+		$trailer = substr($dir1,-1);
+		$header  = substr($dir2,0,1);
+		if ($header=='/' or $header=="\\")
+		{
+			$dir2 = substr( $dir2,1,strlen($dir2)-1);
+		}
+		if ($trailer=='/' or $trailer=="\\")
+		{
+			$dir1 = substr( $dir1,0,strlen($dir1)-1);
+		}
+		return $dir1.'/'.$dir2;
+	}
+
+
+	/**
+	 * Obtenir un nouveau ID
+	 * par défaut il agit sur la DB_0
+	 * @param String $prefix
+	 * @param int $db (MwPDO::DB_0, MwPDO::DB_1, MwPDO::DB_2)
+	 */
+	public static function getUniqueId($prefix,$db='MwPDO::DB_0'){
+		$clin = MwPrefs::getInstance()->getPrefix();
+		$prefix = strtoupper($prefix);
+		$cmd = "select * from s_id where SID_SCHEMA = '$prefix' ";
+		$stmt = MwPDO::getInstance($db)->prepare($cmd);
+		$stmt->execute();
+		$count = $stmt->rowCount();
+		if ($count == 0)
+		{
+			$ins ="insert into s_id (SID_SCHEMA ,SID_COUNTER) values ('$prefix', 0);";
+			$stmt = MwPDO::getInstance($db)->prepare($ins);
+			$stmt->execute();
+		}
+		$stmt = MwPDO::getInstance($db)->prepare($cmd);
+		$stmt->execute();
+		$row = $stmt->fetch();
+		$newkey = (int) $row['SID_COUNTER']+1;
+		$cmd = "update s_id set SID_COUNTER = '$newkey' where SID_SCHEMA = '$prefix';";
+		$stmt = MwPDO::getInstance($db)->prepare($cmd);
+		$stmt->execute();
+		$z = '';
+		for ($n = 0 ; $n < 8-strlen($newkey) ; $n++) $z .= '0';
+		$newkey = $z.$newkey;
+		return $clin.'.'.$prefix.'.'.$newkey;
+	}
+
+	public static function dateToStamp($date){
+		return substr($date,6,4).substr($date,3,2).substr($date,0,2);
+	}
+	
+	
+	public static function constructId($prefix,$id){
+		return $patId =MwPrefs::getInstance()->getPrefix().".".$prefix.".".$id;
+	} 
+}

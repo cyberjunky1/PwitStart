@@ -1,0 +1,29 @@
+<?php
+class stats2Controller extends MwController {
+
+	/**
+	 * actionBeforDisplay
+	 */
+	public function actionBeforDisplay(){
+		$smarty = MwSmarty::getInstance();
+		$listStat2 = MwPaiements::stat2();
+		
+		$nbr = 1;
+		$total1 = 0;
+		$total2 = 0;
+		
+		foreach ($listStat2 as &$row){
+			$row['num'] = $nbr;
+			$total1 += $row['PREVISION'];
+			$total2 += $row['PAIEMENT'];
+			$nbr++;
+		}
+		
+		$smarty->assign('listStat2',$listStat2 );
+		$smarty->assign( 'total1',$total1 );
+		$smarty->assign( 'total2',$total2 );
+	}
+
+	
+}
+

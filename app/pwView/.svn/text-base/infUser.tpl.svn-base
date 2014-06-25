@@ -1,0 +1,92 @@
+<h1>Utilisateurs</h1>
+
+<div class="btn-toolbar" style="width: 90%" align="center">
+	<div class="btn-group pull-left" id="">
+		<a class="btn btn-mini" onclick="edit('N');"><i class="icon-plus"></i></a>
+	</div>
+</div>
+
+
+<div  align="center" class='scrolPage'>
+<table  class="table table-hover table-bordered table-condensed">
+<tr>
+<th>Nom</th>
+<th>Prénom</th>
+<th>Login</th>
+<th>Mail</th>
+<th>Type</th>
+<th>Actions</th>
+</tr>
+ {foreach from=$user item=row}
+ 	<tr>
+ 		<td>{$row.USR_LNAME}</td>
+ 		<td>{$row.USR_FNAME}</td>
+ 		<td>{$row.USR_LOGIN}</td>
+ 		<td>{$row.USR_MAIL}</td>
+ 		<td>{$row.USR_RIGHTS|mwRight}</td>
+
+ 		<td style="width: 60px">
+ 		
+ 			<a class="btn btn-mini"onclick="edit('E','{$row.USR_ID}',
+					'{$row.USR_LNAME|mwAddslashes}','{$row.USR_FNAME|mwAddslashes}',
+					'{$row.USR_LOGIN}','{$row.USR_MAIL}','{$row.USR_RIGHTS}'
+					
+				)"><i class="icon-edit"></i></a> 
+ 		
+ 			<a class="btn btn-mini" onclick="del('{$row.USR_ID}');">
+	 			<i class="icon-trash"></i>
+	 		</a>
+ 		</td>
+ 	</tr>
+ {/foreach}
+ 
+</table>
+</div>
+
+
+
+<div title="utilisateur" id="userDialog" style="display:none; background-color:#f7f7f9">
+<h4>Massif</h4>
+<form action="POST" action="#" id="formUser" name="formUser">
+<input type="hidden" id="USR_ID" name="USR_ID">
+<table style="width: 95%">
+
+	<tr>
+		<td align="right" style="width: 40%">Nom<td>
+		<td><input type="text" id="USR_LNAME" name="USR_LNAME"><td>
+	</tr>
+	<tr>
+		<td align="right" style="width: 40%">Prénom<td>
+		<td><input type="text" id="USR_FNAME" name="USR_FNAME"><td>
+	</tr>
+
+	<tr>
+		<td align="right" style="width: 40%">Type<td>
+		<td>
+			<select id="USR_RIGHTS" name="USR_RIGHTS">
+				<option value="ADM">Administrateur</option>
+				<option value="CON">Consultant</option>
+			</select>
+		<td>
+	</tr>
+	<tr>
+		<td align="right" style="width: 40%">Login<td>
+		<td><input type="text" id="USR_LOGIN" name="USR_LOGIN"><td>
+	</tr>
+	<tr>
+		<td align="right" style="width: 40%">Mot de passe<td>
+		<td><input type="password" id="USR_PSW" name="USR_PSW"><td>
+	</tr>
+	<tr>
+		<td align="right" style="width: 40%">Confirmer Mot de passe<td>
+		<td><input type="password" id="USR_PSW_C" name="USR_PSW_C"><td>
+	</tr>
+	<tr>
+		<td align="right" style="width: 40%">Mail<td>
+		<td><input type="text" id="USR_MAIL" name="USR_MAIL"><td>
+	</tr>
+
+
+</table>
+</form>
+</div>

@@ -1,0 +1,29 @@
+<?php
+abstract class MwDebug {
+	
+	/**
+	 * 
+	 * @param String $text
+	 */
+	public static function debugInLogFile($text = ''){	
+		$date = date("Y-m-d H:i:s");
+		$text = "\n".$date." ".$text;
+		$fd = fopen("../log/log.txt", "a+");
+		fputs($fd, $text);
+		fclose($fd);		
+	}
+		
+	/**
+	 * 
+	 * @param String $error
+	 * @param String $comments
+	 */
+	public static function debug($error='',$comments = ''){
+		
+		$sdbg = MwSmarty::getInstance();
+		$sdbg->assign('debug1', $error);
+		$sdbg->assign('debug2', $comments);
+		$sdbg->display('debug.tpl');
+	}
+
+}

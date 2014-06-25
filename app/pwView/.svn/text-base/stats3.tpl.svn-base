@@ -1,0 +1,39 @@
+<h3>Suivi par Formation</h3>
+
+<div align="center">
+<fieldset class="mwfieldset1" style="width: 100%" >
+
+<legend>Choisir les les dates </legend>
+<table style="width: 100%; ;">
+<tr>
+	<td align="right">Date début </td>
+	<td style="vertical-align: middle;">
+		<td><input type="text" id="DATE_BEG" name="DATE_BEG" style="width: 80px"  readonly><td>
+	</td>
+	<td align="right">Date fin</td>
+	<td style="vertical-align: middle;">
+		<td><input type="text" id="DATE_END" name="DATE_END" style="width: 80px"  readonly><td>
+	</td>
+	<td align="right"></td>
+	<td style="vertical-align: middle;">
+		<td><a class="btn btn-mini" onclick="getStat3();"><i class="icon-search"></i></a><td>
+	</td>
+</tr>
+</table>
+</fieldset>
+
+
+<div  align="center" class='scrolPage2'>
+
+<table id="tablePrev" name="tablePrev" class="table table-hover table-bordered table-condensed">
+ 
+</table>
+
+</table>
+
+
+</div>
+
+
+
+</div>

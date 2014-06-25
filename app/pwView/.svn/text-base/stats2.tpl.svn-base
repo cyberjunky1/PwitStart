@@ -1,0 +1,37 @@
+<h3>Prévisions par Etudiant</h3>
+
+
+<div  align="center" class='scrolPage'>
+<table  class="table table-hover table-bordered table-condensed">
+<tr>
+<th>Num</th>
+<th>Nom</th>
+<th>Prénom</th>
+<th>Prévisions</th>
+<th>Paiements</th>
+</tr>
+{foreach from=$listStat2 item=row}
+ 	<tr>
+ 	 	<td>{$row.num}</td>
+ 		<td>{$row.ETU_NOM}</td>
+ 		<td>{$row.ETU_PRENOM}</td>
+ 		<td>{$row.PREVISION}</td>
+ 		<td>{$row.PAIEMENT}</td>
+ 	</tr>
+{/foreach}
+ 
+ 
+   <tr>
+ 		<td><b>Total</b></td>
+ 		<td></td>
+ 		<td></td>
+ 		<td><b>{$total1}</b></td>
+ 		<td><b>{$total2}</b></td>
+ 	</tr>
+ 
+</table>
+</div>
+
+
+
+</div>
