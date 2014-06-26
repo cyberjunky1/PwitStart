@@ -1,6 +1,0 @@
-<?php
-
-Interface MwInOut {	
-	public function save();
-	public function delete();
-}

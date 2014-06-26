@@ -1,5 +1,0 @@
-<?php
-
-Interface MwSetup {	
-	public static function createTable();	
-}

@@ -1,9 +1,0 @@
-<?php
-
-class homeController extends MwController {
-
-	public function actionBeforDisplay(){
-		
-	}
-
-}

@@ -1,7 +1,0 @@
-<?php
-
-class aproposController extends MwController {
-
-	protected $checkConnexion = false;
-	
-}

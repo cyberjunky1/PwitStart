@@ -1,7 +1,0 @@
-<?php
-
-class contactController extends MwController {
-
-	protected $checkConnexion = false;
-	
-}
