@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.13, created on 2014-04-30 16:46:08
+<?php /* Smarty version Smarty-3.1.18, created on 2014-06-27 15:56:18
          compiled from "/home/cyberjunky/workspace_php/pwit/app/pwView/_debug.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:182264546953610cb09a55f7-37377280%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '41680daaba0cd157ae890d016a30f416e4f1559c' => 
     array (
       0 => '/home/cyberjunky/workspace_php/pwit/app/pwView/_debug.tpl',
-      1 => 1398868952,
+      1 => 1402756476,
       2 => 'file',
     ),
   ),
@@ -15,16 +15,16 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.18',
+  'unifunc' => 'content_53610cb09c5254_51068444',
   'variables' => 
   array (
     'debug1' => 0,
     'debug2' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.13',
-  'unifunc' => 'content_53610cb09c5254_51068444',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_53610cb09c5254_51068444')) {function content_53610cb09c5254_51068444($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("_header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_53610cb09c5254_51068444')) {function content_53610cb09c5254_51068444($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("_header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
  
 
 <style type="text/css">
@@ -71,7 +71,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		/* Her your special JS Code */
 	</script>
 	 
-	<?php echo $_smarty_tpl->getSubTemplate ("_footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+	<?php echo $_smarty_tpl->getSubTemplate ("_footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
 </body>
 </html>

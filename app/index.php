@@ -17,4 +17,4 @@
  You should have received a copy of the GNU General Public License
  along with Pwit.  If not, see <http://www.gnu.org/licenses/>.
  */
-header ( "Location: " . ">main>index" );
+header ( "Location: " . "main!index" );

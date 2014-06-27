@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{$lang}">
+<html lang="">
   <head>
    	<title>{$title}</title>
 {literal}  

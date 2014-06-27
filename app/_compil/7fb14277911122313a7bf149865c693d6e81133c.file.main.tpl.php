@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.13, created on 2014-06-20 23:28:27
+<?php /* Smarty version Smarty-3.1.18, created on 2014-06-27 15:44:54
          compiled from "/home/cyberjunky/workspace_php/pwit/app/pwView/main.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:8123463995361092b830234-87015892%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -15,11 +15,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.13',
+  'version' => 'Smarty-3.1.18',
   'unifunc' => 'content_5361092b8509f5_20221466',
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5361092b8509f5_20221466')) {function content_5361092b8509f5_20221466($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("_header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+<?php if ($_valid && !is_callable('content_5361092b8509f5_20221466')) {function content_5361092b8509f5_20221466($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ("_header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
  
 <style type="text/css">
 /* Her your special CSS Code */
@@ -100,7 +100,7 @@ body {
 	<script type="text/javascript">
 		/* Her your special JS Code */
 	</script>
-	 <?php echo $_smarty_tpl->getSubTemplate ("_footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+	 <?php echo $_smarty_tpl->getSubTemplate ("_footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
 </body>
 </html>

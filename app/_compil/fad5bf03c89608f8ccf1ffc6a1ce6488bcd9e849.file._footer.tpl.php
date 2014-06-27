@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.13, created on 2014-06-20 23:28:27
+<?php /* Smarty version Smarty-3.1.18, created on 2014-06-27 15:44:54
          compiled from "/home/cyberjunky/workspace_php/pwit/app/pwView/_footer.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:147570884535f9940add481-17755671%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -15,7 +15,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.13',
+  'version' => 'Smarty-3.1.18',
   'unifunc' => 'content_535f9940adef86_49280007',
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>

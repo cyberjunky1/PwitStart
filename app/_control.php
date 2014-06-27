@@ -21,7 +21,7 @@ require_once '../_pwClass/PwInit.php';
 
 PwPrefs::getInstance ()->setAppPath ( basename ( dirname ( __FILE__ ) ) );
 
-$param = explode ( '>', $_GET ['p'] );
+$param = explode ( '!', $_GET ['p'] );
 if (count ( $param ) < 2) {
 	PwDebug::debug ( "insufficient parameters ", $_GET ['p'] );
 	PwDebug::debugInLogFile ( "Error Call Controller : " . implode ( ",", $param ) );
